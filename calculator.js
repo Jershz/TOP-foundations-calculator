@@ -35,12 +35,15 @@ function createAndAppendNewButton(newRow) {
     newBtn.className = newBtn.textContent;
 
     newBtn.addEventListener("click", () => {
+        if(newBtn.className === "+/-") return;
         if(newBtn.className === "CE") {
             input = "";
             inputOutputDisplay.textContent = 0;
             val = [];
+            switchInput = false;
         }
         else if(operationLabels.includes(newBtn.className)) {
+            switchInput = false;
             operator = newBtn.className;
             if(input != "") val.push(parseFloat(input));
             input = "";
@@ -53,15 +56,23 @@ function createAndAppendNewButton(newRow) {
             }
         }
         else if(newBtn.className === "=") {
-            if(input != "" && operator != "") val.push(parseFloat(input))
+            if(operator == "") return;
+            if(input != "") val.push(parseFloat(input))
             if(val.length >= 2) {
                 input = operate(parseFloat(val[val.length-2]),parseFloat(val[val.length-1]),operator);
                 inputOutputDisplay.textContent = input;
                 val = [];
+                val.push(parseFloat(input));
+                input = "";
                 operator = "";
+                switchInput = true;
             }
         }
         else {
+            if(switchInput) {
+                switchInput = false;
+                val = [];
+            }
             input += newBtn.className;
             inputOutputDisplay.textContent = input;
         }
