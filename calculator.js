@@ -11,7 +11,7 @@ inputOutputDisplay.textContent = 0;
 const rows = 5;
 const columns = 4;
 let switchInput = false;
-let val = [], operator, input = "";
+let val = [], operator = "", input = "";
 
 
 function initializeCalculatorButtons() {
@@ -44,7 +44,6 @@ function createAndAppendNewButton(newRow) {
         }
         else if(operationLabels.includes(newBtn.className)) {
             switchInput = false;
-            operator = newBtn.className;
             if(input != "") val.push(parseFloat(input));
             input = "";
             if(val.length >= 2) {
@@ -53,7 +52,9 @@ function createAndAppendNewButton(newRow) {
                 val = [];
                 val.push(parseFloat(input));
                 input = "";
+                operator = "";
             }
+            if(operator == "") operator = newBtn.className;
         }
         else if(newBtn.className === "=") {
             if(operator == "") return;
