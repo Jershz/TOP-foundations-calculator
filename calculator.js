@@ -95,6 +95,10 @@ function multiply(a,b) {
 }
 
 function divide(a,b) {
+    if(b == 0) {
+        alert("Snarky error message!")
+        return;
+    }
     return a/b;
 }
 
