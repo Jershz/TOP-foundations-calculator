@@ -3,5 +3,38 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    border: 2px solid black
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    max-width: 400px;
+    height: 70%;
+    background-color: grey;
+    border: 2px solid black;
+}
+
+.calculator-display {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20%;
+    flex: none;
+    background-color: black;
+    border: 2px solid white;
+}
+
+.calculator-display span {
+    color: white;
+    padding: 1em;
+    font-size: 24px;
+}
+
+.calculator-buttons-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: grey;
+    border: 2px solid black;
 }
