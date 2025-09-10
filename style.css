@@ -13,6 +13,8 @@ body {
     height: 70%;
     background-color: grey;
     border: 2px solid black;
+    gap: .5em;
+    padding: .25em;
 }
 
 .calculator-display {
@@ -23,6 +25,7 @@ body {
     flex: none;
     background-color: black;
     border: 2px solid white;
+    padding: .5em;
 }
 
 .calculator-display span {
@@ -37,4 +40,6 @@ body {
     flex: 1;
     background-color: grey;
     border: 2px solid black;
+    gap: .5em;
+    padding: .5em;
 }

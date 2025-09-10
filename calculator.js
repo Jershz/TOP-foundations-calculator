@@ -20,7 +20,8 @@ function initializeCalculatorButtons() {
         newRow.style.display = "flex";
         newRow.style.flex = "1";
         buttonsContainer.appendChild(newRow);
-
+        newRow.style.gap = ".5em";
+        newRow.style.padding = ".1em";
         for(let i = 0; i < columns; i++) {
             createAndAppendNewButton(newRow);
         }
@@ -33,7 +34,8 @@ function createAndAppendNewButton(newRow) {
     newBtn.style.flex = "1";
     newBtn.textContent = btnLabel;
     newBtn.className = newBtn.textContent;
-
+    newBtn.style.borderRadius = ".5em";
+    newBtn.style.fontWeight = "800";
     newBtn.addEventListener("click", () => {
         if(newBtn.className === "+/-") return;
         if(newBtn.className === "CE") {
